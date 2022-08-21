@@ -9,7 +9,7 @@ The following is an example of cache eviction.
 ❯ fincore -b Cargo.toml 
   RES PAGES SIZE FILE
  4096     1  500 Cargo.toml
-❯ fadvise dont-need Cargo.toml 
+❯ fadvise dontneed Cargo.toml 
 filename: Cargo.toml
 advice: POSIX_FADV_DONTNEED
 offset: 0
