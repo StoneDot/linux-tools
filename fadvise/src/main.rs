@@ -42,9 +42,6 @@ struct AdviseInfo {
     /// Filename advice is applied
     #[clap(value_parser, value_name = "FILE")]
     filename: PathBuf,
-    // /// Advice type
-    // #[clap(default_value_t = FadviseType::Normal, arg_enum, value_parser)]
-    // advice: FadviseType,
     /// Offset of a range advice is applied
     #[clap(default_value_t = 0, value_parser = clap::value_parser!(i64).range(0..))]
     offset: i64,
