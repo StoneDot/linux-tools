@@ -18,18 +18,25 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     /// Apply advice of POSIX_FADV_NORMAL
+    #[clap(display_order = 1)]
     Normal(AdviseInfo),
     /// Apply advice of POSIX_FADV_SEQUENTIAL
+    #[clap(display_order = 2)]
     Sequential(AdviseInfo),
     /// Apply advice of POSIX_FADV_RANDOM
+    #[clap(display_order = 3)]
     Random(AdviseInfo),
     /// Apply advice of POSIX_FADV_NOREUSE
+    #[clap(display_order = 4)]
     NoReuse(AdviseInfo),
     /// Apply advice of POSIX_FADV_WILLNEED
+    #[clap(display_order = 5)]
     WillNeed(AdviseInfo),
     /// Apply advice of POSIX_FADV_DONTNEED
+    #[clap(display_order = 6)]
     DontNeed(AdviseInfo),
     /// Generate code for completion
+    #[clap(display_order = 7)]
     Completion {
         /// Target shell to create completion code
         #[clap(long, short, arg_enum)]
