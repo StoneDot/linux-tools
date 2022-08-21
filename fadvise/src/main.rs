@@ -124,9 +124,8 @@ fn handle_advice(advice: FadviseType, info: AdviseInfo) -> anyhow::Result<()> {
     eprintln!("len: {}", len);
     let file = File::open(filename).context("Failed to open the file")?;
     let fd = file.as_raw_fd();
-    let advice: PosixFadviseAdvice = advice.into();
 
-    posix_fadvise(fd, offset, len, advice)?;
+    posix_fadvise(fd, offset, len, advice.into())?;
 
     Ok(())
 }
